@@ -6,7 +6,9 @@ const ExpenseItem = (props) =>{
         <li className="list-group-item d-flex justify-content-between align-items-center">
             {props.name}
             <div>
-            <span class="badge bg-primary">${props.cost}</span> 
+            <span class="badge bg-primary">
+                ${props.cost}
+            </span> 
                 <TiDelete size="1.5em"></TiDelete>
 
             </div>

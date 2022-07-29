@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
 import { appContext } from '../context/appContext';
-const Budget = () => {
-	const {budget} = useContext(appContext);
+
+const budget = () => {
+	const { budget } = useContext(appContext);
 	return (
 		<div className='alert alert-secondary'>
 			<span>Budget: ${budget}</span>
@@ -9,4 +10,4 @@ const Budget = () => {
 	);
 };
 
-export default Budget;
+export default budget;

@@ -1,7 +1,6 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from 'react';
 
 const AppReducer = (state, action)=>{
-
     switch(action.type){
         default:
             return state;
@@ -19,19 +18,21 @@ const initialState = {
 
 export const appContext = createContext();
 
-export const appProvider = (props) => {
-        const [state, dispatch] = useReducer(AppReducer, initialState);
 
-        return(<appContext.appProvider value=
-            {{ 
-                budget: state.budget,
-                expenses: state.expenses,
-                dispatch,
-            }}
-        >
-        
-        {props.children}
-        </appContext.appProvider>
-        );
-    };
+export const AppProvider = (props) => {
 
+	const [state, dispatch] = useReducer(AppReducer, initialState);
+
+
+	return (
+		<appContext.Provider
+			value = {{
+				expenses: state.expenses,
+				budget: state.budget,
+				dispatch,
+			}}
+		>
+			{props.children}
+		</appContext.Provider>
+	);
+};
